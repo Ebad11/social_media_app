@@ -5,6 +5,8 @@ import { createOrUpdateUser } from '../../../lib/actions/user'
 
 export async function POST(req) {
 
+    alert("Webhook recevived")
+
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET
   if (!WEBHOOK_SECRET) {
