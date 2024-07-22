@@ -70,7 +70,7 @@ export async function POST(req) {
       });
     } catch (err) {
       console.error("Error creating or updating user:", err);
-      return new Response("Error occured", {
+      return new Response("Error occured in creating user", {
         status: 500,
       });
     }
