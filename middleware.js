@@ -1,10 +1,8 @@
 import { clerkMiddleware } from '@clerk/nextjs/server';
 
-export default clerkMiddleware((auth, req) => {
-  // Add your middleware checks
-  publicRoutes: ["/api/webhook"]
-}, { debug: true })
+// Make sure that the `/api/webhooks/(.*)` route is not protected here
+export default clerkMiddleware()
 
 export const config = {
-  matcher: ['/((?!.\\..|_next).)', '/', '/(api|trpc)(.)'],
+  matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
 };
