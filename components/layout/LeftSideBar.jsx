@@ -30,7 +30,7 @@ const LeftSideBar = () => {
 
      getUser();
     }
-  }, [user])
+  }, [], [user])
   
   // console.log(user);
 
