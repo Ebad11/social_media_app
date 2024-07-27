@@ -26,11 +26,11 @@ const LeftSideBar = () => {
 
 
   useEffect(() => {
-    if(isLoaded) {
-
+    console.log(user)
+    if(user) {
      getUser();
     }
-  }, [], [user])
+  }, [user])
   
   // console.log(user);
 
