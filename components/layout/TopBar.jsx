@@ -30,7 +30,7 @@ const TopBar = () => {
 
       <div className='relative w-[74%] max-md:w-[80%]'>
         <input type="text" className='search-bar' placeholder='Search Posts, People, ...' value={search} onChange={(e) => setSearch(e.target.value)} />
-        <Search className='search-icon' onClick={() => { }} />
+        <Search className='search-icon' onClick={() => { router.push(`/search/posts/${search}`) }} />
       </div>
 
       <button className='create-post-btn whitespace-nowrap w-[24%]' onClick={() => { router.push("/create-post") }}>

@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react'
 import { useForm } from 'react-hook-form'
 
-const Posting = ({ post}) => {
+const Posting = ({ post, apiEndPoint}) => {
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm({ defaultValues: post });
   const router= useRouter();
@@ -16,10 +16,16 @@ const Posting = ({ post}) => {
       postForm.append('creatorId',data.creatorId);
       postForm.append('caption',data.caption);
       postForm.append('tag',data.tag);
-      postForm.append('postPhoto', data.postPhoto[0]);
+
+      if(typeof data.postPhoto !== 'string'){
+        postForm.append('postPhoto', data.postPhoto[0]);
+      } else
+      {
+        postForm.append('postPhoto', data.postPhoto);
+      }
 
       
-      const response = await fetch("/api/post/new", {
+      const response = await fetch(apiEndPoint, {
         method: 'POST',
         body: postForm,
       });

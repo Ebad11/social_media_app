@@ -17,7 +17,7 @@ const LeftSideBar = () => {
 
   const getUser = async () => {
     console.log(user);
-    const response = await fetch(`api/user/${user.id}`);
+    const response = await fetch(`/api/user/${user.id}`);
     const data = await response.json();
     console.log("data:",data)
     setUserData(data);
@@ -31,8 +31,9 @@ const LeftSideBar = () => {
      getUser();
     }
   }, [user])
+
   
-  // console.log(user);
+  console.log("-----",user);
 
   return loading || !isLoaded ? <Loader/> :  (
     <div className='h-screen left-0 top-0 sticky overflow-auto px-10 py-6 flex flex-col gap-6 max-md:hidden custom-scrollbar'>
