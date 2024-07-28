@@ -35,7 +35,7 @@ const SearchPeople = () => {
                 Posts
             </Link>
             <Link className='tab bg-purple-1' href={`/search/people/${query}`}>
-                Posts
+                People
             </Link>
         </div>
 

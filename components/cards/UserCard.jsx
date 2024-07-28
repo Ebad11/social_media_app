@@ -40,7 +40,7 @@ const UserCard = ({userData}) => {
             <Image src={userData.profilePhoto} alt='profile photo' width={50} height={50} className='rounded-full'/>
             <div className='flex flex-col gap-1'>
                 <p className='text-small-semibold text-light-1'>{userData.firstName} {userData.lastName}</p>
-                <p className='text-subtle-medium text-light-3'>@{userData.username}</p>
+                <p className='text-subtle-medium text-light-3'>@{userData.userName}</p>
             </div>
         </div>
 
